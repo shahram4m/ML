@@ -139,7 +139,6 @@ testx, testy, poly, clf = None
 def polynomial():
     trainx = np.asanyarray(train[['ENGINESIZE']])
     trainy = np.asanyarray(train[['CO2EMISSIONS']])
-
     testx = np.asanyarray(test[['ENGINESIZE']])
     testy = np.asanyarray(test[['CO2EMISSIONS']])
     print(trainx[:3])
@@ -154,11 +153,10 @@ def polynomial():
     print('Intercept:', clf.intercept_)
 
     plt.scatter(train.ENGINESIZE, train.CO2EMISSIONS, color='blue')
-    xx = np.arange(0.0, 10.0, 0.1)
-    yy = clf.intercept_[0] + clf.coef_[0][1] * xx + clf.coef_[0][2] * np.power(xx,2)
+    xx = np.arange(0.0, 10.0, 1.0)
+    yy = clf.intercept_[0] + clf.coef_[0][1] * xx + clf.coef_[0][2] * np.power(xx, 2)
     plt.plot(xx, yy, '-r')
     #y = b + teta1 X + teta2 x**
-
     plt.xlabel('Eng size')
     plt.ylabel('Emission')
     plt.show()
@@ -173,7 +171,6 @@ def Evaloation_polynomial():
     print('R2 socre : %.2f' % r2_score(testy, test_y_))
 
 
-
 #------------------------------Regg non linear reg
 def non_linear_regg():
     x = np.arange(-5.0, 5.0, 0.1)
@@ -182,7 +179,7 @@ def non_linear_regg():
     ydata = y + y_noise
 
     plt.plot(x, ydata, 'bo')
-    plt.plot(x,y, 'r')
+    plt.plot(x, y, 'r')
     plt.xlabel('dep var')
     plt.ylabel('indep var')
     plt.show()
