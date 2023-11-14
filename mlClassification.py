@@ -12,10 +12,10 @@ from sklearn.metrics import r2_score
 import pylab as pl
 from sklearn.preprocessing import PolynomialFeatures
 import seaborn as sns
-from  sklearn import preprocessing
+from sklearn import preprocessing
 
 
-df= pd.read_csv("teleCust1000t.csv")
+df = pd.read_csv("teleCust1000t.csv")
 df.head()
 
 print(df['custcat'].value_counts())
